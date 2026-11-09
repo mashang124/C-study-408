@@ -43,7 +43,7 @@
 每周一 AI 下发任务时，必须明确告知用户：**本周要学什么、要手写什么代码、以及代码必须保存在哪个文件夹和具体文件名中**：
 
 1. **第一阶段 Part A 代码**：存放在 `Stage1_C_And_DataStructures/PartA_C_CPP_Foundation/` 下（例如：`Stage1_C_And_DataStructures/PartA_C_CPP_Foundation/C_Basic_Week01/Day01_IO_And_Variables.c`）。
-2. **第一阶段 Part B 代码**：存放在 `Stage1_C_And_DataStructures/PartB_DataStructures_In_C/` 下（例如：`Stage1_C_And_DataStructures/PartB_DataStructures_In_C/01_SeqList.c`）。
+2. **第一阶段 Part B 代码**：存放在 `Stage1_C_And_DataStructures/PartB_DataStructures/` 下，**每种数据结构一个子目录**（`LinearList/`、`Stack/`、`Queue/`、`Tree/`、`Graph/` …），文件名统一用 `DayNN_结构名.c`，且每个文件自带 `main`、可单独编译运行（例如：`Stage1_C_And_DataStructures/PartB_DataStructures/LinearList/Day01_SeqList.c`）。
 3. **第二阶段代码**：存放在 `Stage2_408_Exam_Problems/` 下。
 4. **第三阶段代码**：存放在 `Stage3_GitHub_Advanced_Code/` 下。
 5. **第四阶段代码**：存放在 `Stage4_Final_Review_And_Interview/` 下。
@@ -87,3 +87,14 @@
 | **`/log [内容]`** | 更新 `README.md` 并生成当天 `Daily_Logs/` 笔记 | 每天学完打卡时使用 |
 | **`/adjust [说明]`** | 结算当前周期，提前进入下周/下阶段计划 | 提前学完/需跳速时使用 |
 | **`/review`** | 诊断当前代码，按手写规范指出逻辑 Bug 与语法优化点 | 写代码报错或想优化时使用 |
+
+
+
+---
+
+## 7. 编码与提交规范
+
+1. **源文件编码**：所有 `.c / .h` 一律保存为 **UTF-8 带 BOM + CRLF 换行**（VS：「另存为 → 编码 → 带签名的 UTF-8」）。没有 BOM 时 MSVC 会按 936 代码页读文件，中文注释先报 C4819，再引发 C2449 / C2059 这类「在文件范围内找到 `{`」的编译错误。
+2. **提交信息格式**：`dayNN: 主题`（如 `day09: 单链表`）、`chore: ...`、`docs: ...`、`fix: ...`。
+3. **禁止提交**：`.exe / .obj / .pdb / .ilk`、`Debug/`、`Release/`、`.vs/`（`.gitignore` 已覆盖，提交前用 `git status` 复核）。
+4. **提交节奏**：每天学完提交一次并推送；推送前确认工作区干净、代码能编译通过。
