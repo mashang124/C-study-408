@@ -179,6 +179,22 @@ void freeList(Node** L)
 	*L = NULL;
 }
 
+//释放链表：不释放头指针
+/*
+void freeList(Node* L)
+{
+	Node* p = L->next;
+	Node* q;
+	while (p != NULL)
+	{
+		q = p->next;
+		free(p);
+		p = q;
+	}
+	L->next = NULL;
+}
+*/
+
 int main()
 {
 	Node* list = initList();
